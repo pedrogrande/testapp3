@@ -1,14 +1,18 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @user_profile.name %>
-</p>
+<div class="row">
+	<div class="col-md-4">
+		<div class="panel panel-default">
+			<%= image_tag(@user_profile.profile_pic_url(:thumbnail), class: 'img-thumbnail pull-left') %>
+	  	<h3><%= @user_profile.name %></h3>
+			<%= link_to 'Edit', edit_user_profile_path(@user_profile), class: 'btn btn-primary' %>
 
-<p>
-  <strong>Profile pic:</strong>
-  <%= image_tag(@user_profile.profile_pic_url) %>
-</p>
-
-<%= link_to 'Edit', edit_user_profile_path(@user_profile) %> |
-<%= link_to 'Back', user_profiles_path %>
+			<h2>My business profiles</h2>
+			<ul>
+				<% @user_profile.user.business_profiles.each do |business| %>
+					<li><%= link_to business.name, business %></li>
+				<% end %>
+			</ul>
+		</div>
+	</div>
+</div>

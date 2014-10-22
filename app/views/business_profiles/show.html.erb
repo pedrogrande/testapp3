@@ -1,54 +1,22 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @business_profile.name %>
-</p>
+<div class="row">
+  <div class="col-md-4">
+    <div class="panel panel-default">
+    <div class="panel-body">
+      <h1><%= @business_profile.name %></h1>
 
-<p>
-  <strong>Street:</strong>
-  <%= @business_profile.street %>
-</p>
+      <h2>Location</h2>
+      <p><%= @business_profile.street %></p>
+      <p><%= @business_profile.city %> <%= @business_profile.state %> <%= @business_profile.postcode %> <%= @business_profile.country %></p>
 
-<p>
-  <strong>City:</strong>
-  <%= @business_profile.city %>
-</p>
+      <h4><span class="fa fa-phone"></span> <%= @business_profile.phone %></h4>
+      <h4><span class="fa fa-envelope"></span> <%= @business_profile.email %></h4>
+      <h4><i class="fa fa-globe"></i> <%= link_to 'Website', @business_profile.website %></h4>
+      <h4>
+        <i class="fa fa-twitter"></i> 
+        <a href="http://twitter.com/<%= @business_profile.twitter %>"> <%= @business_profile.twitter %></a>
+      </h4>
 
-<p>
-  <strong>State:</strong>
-  <%= @business_profile.state %>
-</p>
-
-<p>
-  <strong>Postcode:</strong>
-  <%= @business_profile.postcode %>
-</p>
-
-<p>
-  <strong>Country:</strong>
-  <%= @business_profile.country %>
-</p>
-
-<p>
-  <strong>Phone:</strong>
-  <%= @business_profile.phone %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @business_profile.email %>
-</p>
-
-<p>
-  <strong>Website:</strong>
-  <%= @business_profile.website %>
-</p>
-
-<p>
-  <strong>Twitter:</strong>
-  <%= @business_profile.twitter %>
-</p>
-
-<%= link_to 'Edit', edit_business_profile_path(@business_profile) %> |
-<%= link_to 'Back', business_profiles_path %>
+<%= link_to 'Edit', edit_business_profile_path(@business_profile), class: 'btn btn-primary' %>
+</div></div></div></div>

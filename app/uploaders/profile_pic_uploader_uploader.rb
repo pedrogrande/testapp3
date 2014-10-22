@@ -8,11 +8,15 @@ class ProfilePicUploaderUploader < CarrierWave::Uploader::Base
   # process :tags => ['post_picture']
   
   version :standard do
-    process :resize_to_fill => [100, 150, :north]
+    process :resize_to_fill => [150, 150, :north]
+  end
+
+  version :logo do
+    resize_to_fit(100,100)
   end
   
   version :thumbnail do
-    resize_to_fit(50, 50)
+    resize_to_fit(25, 25)
   end
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
