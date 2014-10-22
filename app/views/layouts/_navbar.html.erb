@@ -48,9 +48,9 @@
             </a>
             <ul class="dropdown-menu" role="menu">
 
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
+              <li><%= link_to 'My profile', user_profile_path(current_user.user_profile) %></li>
+              <li><%= link_to 'My businesses', business_profile_path(current_user.business_profiles.first) if current_user.business_profiles.any? %></li>
+              
               <li class="divider"></li>
               <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
             </ul>
