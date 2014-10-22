@@ -10,6 +10,7 @@ class BusinessProfilesController < ApplicationController
   # GET /business_profiles/1
   # GET /business_profiles/1.json
   def show
+    @testimonial = Testimonial.new
   end
 
   # GET /business_profiles/new

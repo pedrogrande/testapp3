@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
 	has_many :business_users
 	has_many :business_profiles, through: :business_users
 	has_one :user_profile
+  has_many :testimonials
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

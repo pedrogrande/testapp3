@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :testimonials
+
   resources :user_profiles
 
   resources :business_profiles

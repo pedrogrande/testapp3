@@ -1,0 +1,15 @@
+<%= simple_form_for(@testimonial) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-group">
+    <%= f.input :star_rating, input_html: { class: 'form-control'} %>
+  </div>
+  <div class="form-group">
+    <%= f.input :body, label: 'Your review', input_html: { class: 'form-control', rows: 5} %>
+  </div>
+  <%= f.input :business_profile_id, input_html: { value: @business_profile.id } %>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
