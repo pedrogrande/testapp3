@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141022094956) do
+ActiveRecord::Schema.define(version: 20141027091416) do
 
   create_table "business_profiles", force: true do |t|
     t.string   "name"
@@ -37,6 +37,15 @@ ActiveRecord::Schema.define(version: 20141022094956) do
 
   add_index "business_users", ["business_profile_id"], name: "index_business_users_on_business_profile_id"
   add_index "business_users", ["user_id"], name: "index_business_users_on_user_id"
+
+  create_table "enquiries", force: true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "phone"
+    t.text     "message"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "roles", force: true do |t|
     t.string   "name"

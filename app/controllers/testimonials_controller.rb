@@ -29,7 +29,8 @@ class TestimonialsController < ApplicationController
 
     respond_to do |format|
       if @testimonial.save
-        format.html { redirect_to @testimonial, notice: 'Testimonial was successfully created.' }
+        TestimonialMailer.received(@testimonial).deliver
+        format.html { redirect_to :back, notice: 'Testimonial was successfully created.' }
         format.json { render :show, status: :created, location: @testimonial }
       else
         format.html { render :new }

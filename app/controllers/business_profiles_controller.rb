@@ -11,6 +11,7 @@ class BusinessProfilesController < ApplicationController
   # GET /business_profiles/1.json
   def show
     @testimonial = Testimonial.new
+    @testimonials = @business_profile.testimonials.reverse_chron_order
   end
 
   # GET /business_profiles/new

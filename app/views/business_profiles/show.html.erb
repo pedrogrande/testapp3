@@ -1,3 +1,4 @@
+<%= content_for :title, 'Testimonial app - ' + @business_profile.name %>
 <p id="notice"><%= notice %></p>
 
 <div class="row">
@@ -29,9 +30,25 @@
     </div>
   </div>
 </div>
-
-
-
+</div>
+<div class="row">
+  <% @testimonials.each_with_index do |testimonial, index| %>
+  <% if (index%2) == 0 %>
+    </div>
+    <div class="row">
+  <% end %>
+  <div class="col-md-6">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <p>Reviewed by: <%= testimonial.user.user_profile.name %></p>
+        <p>Star rating: <% testimonial.star_rating.times do %><i class="fa fa-star gold"></i> <% end %></p>
+        <p>Review:</p>
+        <p><%= testimonial.body %></p>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
 
 
 

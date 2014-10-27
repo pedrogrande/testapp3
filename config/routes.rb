@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'contact', to: 'contact#index'
+
+  resources :enquiries
+
   resources :testimonials
 
   resources :user_profiles

@@ -1,13 +1,21 @@
 <%= simple_form_for(@testimonial) do |f| %>
   <%= f.error_notification %>
-
   <div class="form-group">
-    <%= f.input :star_rating, input_html: { class: 'form-control'} %>
-  </div>
+  <div class="control-group radio_buttons optional testimonial_star_rating">
+    <label class="radio_buttons optional control-label">Star rating</label>
+    <div class="controls"><label class="radio-inline">
+    <input class="radio_buttons optional" id="testimonial_star_rating_1" name="testimonial[star_rating]" type="radio" value="1" />1</label>
+
+    <label class="radio-inline"><input class="radio_buttons optional" id="testimonial_star_rating_2" name="testimonial[star_rating]" type="radio" value="2" />2</label>
+
+    <label class="radio-inline">
+
+    <input class="radio_buttons optional" id="testimonial_star_rating_3" name="testimonial[star_rating]" type="radio" value="3" />3</label><label class="radio-inline"><input class="radio_buttons optional" id="testimonial_star_rating_4" name="testimonial[star_rating]" type="radio" value="4" />4</label><label class="radio-inline"><input class="radio_buttons optional" id="testimonial_star_rating_5" name="testimonial[star_rating]" type="radio" value="5" />5</label></div></div></div>
   <div class="form-group">
     <%= f.input :body, label: 'Your review', input_html: { class: 'form-control', rows: 5} %>
   </div>
-  <%= f.input :business_profile_id, input_html: { value: @business_profile.id } %>
+
+  <%= f.input :business_profile_id, as: :hidden, input_html: { value: @business_profile.id } %>
 
   <div class="form-actions">
     <%= f.button :submit %>
